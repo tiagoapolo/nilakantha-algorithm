@@ -1,0 +1,110 @@
+
+## Teste MacBook Pro 
+
+Teste 1
+pi: 3.14159
+5942ms
+16045519299 clock
+
+Teste 2
+pi: 3.14159
+5879ms
+15875253658 clock
+
+Teste 3
+pi: 3.14159
+5846ms
+15785664567 clock
+
+Teste 4
+pi: 3.14159
+5835ms
+15755527323 clock
+
+Teste 5
+pi: 3.14159
+5858ms
+15818780497 clock
+
+Teste 6
+pi: 3.14159
+5822ms
+15720472703 clock
+
+Teste 7
+pi: 3.14159
+5857ms
+15816351832 clock
+
+Teste 8
+pi: 3.14159
+5858ms
+15816721316 clock
+
+Teste 9
+pi: 3.14159
+5833ms
+15749663039 clock
+
+Teste 10
+pi: 3.14159
+5859ms
+15819493937 clock
+
+--> Média: 5859ms
+
+
+## Teste Servidor Espec.ppgia
+
+- TESTE- 1
+pi: 3.14159
+10789ms
+25828409205 clock
+
+- TESTE- 2 
+pi: 3.14159
+10796ms
+25847032410 clock
+
+- TESTE- 3 
+pi: 3.14159
+10575ms
+25317653577 clock
+
+- TESTE- 4 
+pi: 3.14159
+10477ms
+25082909598 clock
+
+- TESTE- 5 
+pi: 3.14159
+10526ms
+25199743032 clock
+
+- TESTE- 6 
+pi: 3.14159
+10629ms
+25447197618 clock
+
+- TESTE- 7 
+pi: 3.14159
+10503ms
+25144854096 clock
+
+- TESTE- 8 
+pi: 3.14159
+10488ms
+25108146681 clock
+
+- TESTE- 9 
+pi: 3.14159
+10468ms
+25060043439 clock
+
+- TESTE- 10
+pi: 3.14159
+10368ms
+24821357583 clock
+
+
+Média 10,55 s

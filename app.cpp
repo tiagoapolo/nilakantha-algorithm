@@ -33,9 +33,7 @@ int main(int argc, char const *argv[])
     long double total = 0.0;
     int cThreads = 1;
     int division;
-    
-
-
+    std::thread vt[256];
 
     do {
 
@@ -60,6 +58,7 @@ int main(int argc, char const *argv[])
     }
 
     for(int i=0; i<cThreads; ++i) {
+
         vt[i].join();
         total += resultsArray[i];
     }
@@ -86,6 +85,9 @@ void calculation(double start, double limit, int id){
         sum += (exponent/((2*i+2)*(2*i+3)*(2*i+4)));
         exponent = exponent * -1;
     }
+
+    // std::cout << "\nID: "<< id << std::endl;
+    // std::cout << "SUM: "<< sum << std::endl;
 
     resultsArray.push_back(sum);
     
