@@ -5,7 +5,8 @@
 #include <cmath>
 #include <vector>
 
-using namespace std::chrono;
+using namespace std;
+using namespace chrono;
 
 // Windows
 #ifdef _WIN32
@@ -25,7 +26,13 @@ uint64_t rdtscp(){
 #endif
 
 void calculation(double start, double limit, int id);
-std::vector< long double > resultsArray;
+
+union Cake {
+    long double cakeSlice;
+    char pool [64];
+};
+
+vector< Cake > resultsArray;
 
 int main(int argc, char const *argv[])
 {    
@@ -33,15 +40,15 @@ int main(int argc, char const *argv[])
     long double total = 0.0;
     int cThreads = 1;
     int division;
-    std::thread vt[256];
+    thread * vt[256];
 
     do {
 
-        std::cout << "How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?" << std::endl;
+        cout << "How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?" << endl;
         scanf("%d", &cThreads);
 
         if(cThreads > 256){
-            std::cout << "\n| OUT OF RANGE! - Choose a number between 1 and 256! |\n" << std::endl;
+            cout << "\n| OUT OF RANGE! - Choose a number between 1 and 256! |\n" << endl;
         }
 
     } while (cThreads > 256);
@@ -54,13 +61,13 @@ int main(int argc, char const *argv[])
                
 
     for(int i=0; i<cThreads; ++i){
-        vt[i] = std::thread(calculation, i*division, (i+1)*division, i);
+        vt[i] = new thread(calculation, i*division, (i+1)*division, i);
     }
 
     for(int i=0; i<cThreads; ++i) {
 
-        vt[i].join();
-        total += resultsArray[i];
+        vt[i]->join();
+        total += resultsArray[i].cakeSlice;
     }
 
     pi = 3 + 4 * total;
@@ -68,9 +75,9 @@ int main(int argc, char const *argv[])
     auto d = steady_clock::now() - t0;
     auto dc = rdtscp() - r0;
 
-    std::cout << "pi: " << pi << std::endl;
-    std::cout << duration_cast<milliseconds>(d).count() << "ms" << std::endl;
-    std::cout << dc << " clock" << std::endl;
+    cout << "pi: " << pi << endl;
+    cout << duration_cast<milliseconds>(d).count() << "ms" << endl;
+    cout << dc << " clock" << endl;
 
     return 0;
 }
@@ -81,15 +88,20 @@ void calculation(double start, double limit, int id){
     long double exponent = 1;
     long double sum;
 
+    Cake cheesecake;
+
     for(double i=start; i < limit; i++) {        
         sum += (exponent/((2*i+2)*(2*i+3)*(2*i+4)));
+        // cheesecake.cakeSlice += (exponent/((2*i+2)*(2*i+3)*(2*i+4)));
         exponent = exponent * -1;
     }
 
-    // std::cout << "\nID: "<< id << std::endl;
-    // std::cout << "SUM: "<< sum << std::endl;
+    cheesecake.cakeSlice = sum;
 
-    resultsArray.push_back(sum);
+    // cout << "\nID: "<< id << endl;
+    // cout << "SUM: "<< sum << endl;
+
+    resultsArray.push_back(cheesecake);
     
     return;
 }

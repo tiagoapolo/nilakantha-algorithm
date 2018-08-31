@@ -108,3 +108,69 @@ pi: 3.14159
 
 
 Média 10,55 s
+
+
+
+---------------------------------
+	Parallel
+---------------------------------
+
+
+--------------------------------
+	Local MacBook Pro
+--------------------------------
+
+How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?
+8
+pi: 3.14159
+2938ms
+7935158001 clock
+MacBook-Pro-de-Tiago:dev tiagoapolo$ ./a.out 
+How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?
+4
+pi: 3.14159
+2842ms
+7673445699 clock
+MacBook-Pro-de-Tiago:dev tiagoapolo$ ./a.out 
+How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?
+2
+pi: 3.14159
+3003ms
+8110707727 clock
+MacBook-Pro-de-Tiago:dev tiagoapolo$ ./a.out 
+How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?
+1
+pi: 3.14159
+6089ms
+16442117349 clock
+MacBook-Pro-de-Tiago:dev tiagoapolo$ 
+
+--------------------------------
+	Espec.ppgia
+--------------------------------
+
+[tiagoapolo@espec parallel]$ ./a.out 
+How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?
+8
+pi: 3.14159
+2872ms
+6877257522 clock
+[tiagoapolo@espec parallel]$ ./a.out 
+How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?
+1
+pi: 3.14159
+10422ms
+24951201699 clock
+[tiagoapolo@espec parallel]$ ./a.out 
+How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?
+4
+pi: 3.14159
+2894ms
+6929827380 clock
+[tiagoapolo@espec parallel]$ ./a.out 
+How many threads (1 ~ 256) to execute Nilakantha's Algorithm ?
+2
+pi: 3.14159
+5370ms
+12857084106 clock
+[tiagoapolo@espec parallel]$ 
